@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import { Plus, Settings } from "lucide-react";
-import { RepoCard } from "../components/RepoCard";
-import { ActivityList } from "../components/ActivityList";
-import { Card, CardGrid, CardHeader } from "../components/ui/Card";
-import { Button } from "../components/ui/Button";
-import { activities, repos, users } from "../data/mock";
+import { RepoCard } from "@/features/repositories/components/RepoCard";
+import { ActivityList } from "@/features/activities/components/ActivityList";
+import { Card, CardGrid, CardHeader } from "@/components/common/Card";
+import { Button } from "@/components/common/Button";
+import { activities, repos, users } from "@/data/mock";
 
 export default function DashboardPage() {
   const currentUser = users.find((u) => u.username === "alice");

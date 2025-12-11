@@ -1,6 +1,6 @@
-import { OrgCard } from "../components/OrgCard";
-import { Card } from "../components/ui/Card";
-import { orgs } from "../data/mock";
+import { OrgCard } from "@/features/organizations/components/OrgCard";
+import { Card } from "@/components/common/Card";
+import { orgs } from "@/data/mock";
 
 export default function OrganizationsPage() {
   return (

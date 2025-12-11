@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import { Star, GitFork, GitCommit, Lock, Globe } from "lucide-react";
-import type { Repo } from "../types";
-import { Badge } from "./ui/Badge";
-import { formatRelativeTime } from "../lib/time";
+import { GitCommit, GitFork, Globe, Lock, Star } from "lucide-react";
+import { Badge } from "@/components/common/Badge";
+import { formatRelativeTime } from "@/utils/time";
+import type { Repo } from "@/types";
 
 export function RepoCard({ repo }: { repo: Repo }) {
   return (

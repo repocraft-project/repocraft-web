@@ -11,6 +11,18 @@ React + TypeScript + Vite frontend for the Repocraft SSH-first Git hosting platf
 - React Hook Form + Zod (ready for forms)
 - ESLint + Prettier, Vitest + Testing Library
 
+## Project structure
+- `src/main.tsx` → mounts `src/app/App.tsx` (ecosystem/providers + shell)
+- `src/app/providers/` → provider composition (`EcosystemProvider` wraps query/theme/etc.)
+- `src/routes/` → route definitions importing from `src/pages`
+- `src/pages/` → route-level containers (UI only) with optional page-specific components/styles/tests
+- `src/features/<domain>/` → domain modules (e.g., repositories, organizations) with `components/` (and optional hooks/services/types)
+- `src/components/` → shared UI (`components/common`) and layout chrome (`components/layout`)
+- `src/atoms/`, `src/ecosystem/` → centralized state and ecosystem plumbing
+- `src/services/`, `src/schemas/`, `src/types/` → centralized API services, validation schemas, and TypeScript contracts
+- `src/utils/` → shared utilities; `src/hooks/` → shared hooks; `src/data/` → mock data; `src/assets/` → static assets
+- `src/styles/` → global/tailwind styles
+
 ## Commands
 ```bash
 npm install         # install deps
@@ -28,7 +40,7 @@ npm test            # run vitest
 - Organizations + detail: org info, members, repos
 - User profile: bio + repos
 
-All data is currently in `src/data/mock.ts`. Replace with real API calls when backend is ready.
+All data is currently in `src/data/mock.ts`; route pages live under `src/pages/*`. Replace with real API calls when backend is ready.
 
 ## Path aliases
 - `@/*` -> `src/*` (see `tsconfig.app.json`, `vite.config.ts`).

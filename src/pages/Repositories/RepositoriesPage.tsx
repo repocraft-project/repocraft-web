@@ -1,9 +1,9 @@
 import { useMemo, useState } from "react";
 import { Search } from "lucide-react";
-import { RepoCard } from "../components/RepoCard";
-import { Card } from "../components/ui/Card";
-import { repos } from "../data/mock";
-import { cn } from "../lib/utils";
+import { RepoCard } from "@/features/repositories/components/RepoCard";
+import { Card } from "@/components/common/Card";
+import { repos } from "@/data/mock";
+import { cn } from "@/utils/utils";
 
 export default function RepositoriesPage() {
   const [query, setQuery] = useState("");

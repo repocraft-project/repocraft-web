@@ -1,9 +1,9 @@
 import type { JSX } from "react";
 import { GitBranch, GitPullRequest, MessageCircle, Rocket } from "lucide-react";
 import { Link } from "react-router-dom";
-import type { Activity } from "../types";
-import { formatRelativeTime } from "../lib/time";
-import { Card, CardHeader } from "./ui/Card";
+import { Card, CardHeader } from "@/components/common/Card";
+import { formatRelativeTime } from "@/utils/time";
+import type { Activity } from "@/types";
 
 const iconMap: Record<Activity["type"], JSX.Element> = {
   push: <GitBranch size={16} className="text-emerald-500" />,

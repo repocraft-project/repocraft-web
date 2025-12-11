@@ -1,13 +1,14 @@
-import { useParams } from "react-router-dom";
-import { BookOpen, GitFork, GitPullRequest, Star, Shield, FileText, Folder, ChevronDown } from "lucide-react";
-import { repos } from "../data/mock";
-import { Badge } from "../components/ui/Badge";
-import { Card, CardHeader } from "../components/ui/Card";
-import { formatRelativeTime } from "../lib/time";
-import { Button } from "../components/ui/Button";
+import { useState, type ReactNode } from "react";
 import ReactMarkdown from "react-markdown";
+import type { Components } from "react-markdown";
+import { useParams } from "react-router-dom";
+import { BookOpen, ChevronDown, FileText, Folder, GitFork, GitPullRequest, Shield, Star } from "lucide-react";
 import remarkGfm from "remark-gfm";
-import { useState } from "react";
+import { Badge } from "@/components/common/Badge";
+import { Button } from "@/components/common/Button";
+import { Card, CardHeader } from "@/components/common/Card";
+import { repos } from "@/data/mock";
+import { formatRelativeTime } from "@/utils/time";
 
 function CodeBlock({
   inline,
@@ -16,7 +17,7 @@ function CodeBlock({
 }: {
   inline?: boolean;
   className?: string;
-  children?: React.ReactNode;
+  children?: ReactNode;
 }) {
   const [copied, setCopied] = useState(false);
   const codeText = String(children ?? "");
@@ -57,6 +58,16 @@ function CodeBlock({
 export default function RepoDetailPage() {
   const { owner, name } = useParams();
   const repo = repos.find((r) => r.owner === owner && r.name === name);
+
+  const markdownComponents: Components = {
+    code({ inline, className, children }: { inline?: boolean; className?: string; children?: ReactNode }) {
+      return (
+        <CodeBlock inline={inline} className={className}>
+          {children}
+        </CodeBlock>
+      );
+    },
+  };
 
   if (!repo) {
     return <p>Repository not found.</p>;
@@ -175,11 +186,7 @@ export default function RepoDetailPage() {
             <div className="markdown prose max-w-none prose-slate dark:prose-invert">
               <ReactMarkdown
                 remarkPlugins={[remarkGfm]}
-                components={{
-                  code({ inline, className, children }) {
-                    return <CodeBlock inline={inline} className={className}>{children}</CodeBlock>;
-                  },
-                }}
+                components={markdownComponents}
               >
                 {repo.readme}
               </ReactMarkdown>

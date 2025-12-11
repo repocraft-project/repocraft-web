@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Users } from "lucide-react";
-import type { Organization } from "../types";
-import { Card } from "./ui/Card";
+import { Card } from "@/components/common/Card";
+import type { Organization } from "@/types";
 
 export function OrgCard({ org }: { org: Organization }) {
   return (

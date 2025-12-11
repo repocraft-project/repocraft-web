@@ -1,4 +1,4 @@
-import type { Activity, Organization, Repo, User } from "../types";
+import type { Activity, Organization, Repo, User } from "@/types";
 
 export const repos: Repo[] = [
   {

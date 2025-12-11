@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import { Plus, GitBranch, GitPullRequest, MessageCircle, Rocket } from "lucide-react";
-import { OrgCard } from "../components/OrgCard";
-import { Button } from "../components/ui/Button";
-import { Card } from "../components/ui/Card";
-import { activities, orgs, repos, users } from "../data/mock";
+import { OrgCard } from "@/features/organizations/components/OrgCard";
+import { Button } from "@/components/common/Button";
+import { Card } from "@/components/common/Card";
+import { activities, orgs, repos, users } from "@/data/mock";
 
 export default function HomePage() {
   const currentUser = users.find((u) => u.username === "alice");

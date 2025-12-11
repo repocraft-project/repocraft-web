@@ -1,8 +1,8 @@
-import { useParams, Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { Users } from "lucide-react";
-import { users, repos, orgs } from "../data/mock";
-import { RepoCard } from "../components/RepoCard";
-import { Card, CardHeader } from "../components/ui/Card";
+import { Card, CardHeader } from "@/components/common/Card";
+import { orgs, repos, users } from "@/data/mock";
+import { RepoCard } from "@/features/repositories/components/RepoCard";
 
 export default function UserProfilePage() {
   const { username } = useParams();

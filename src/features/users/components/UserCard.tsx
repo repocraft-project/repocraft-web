@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import { MapPin, Mail } from "lucide-react";
-import type { User } from "../types";
-import { Card } from "./ui/Card";
+import { Mail, MapPin } from "lucide-react";
+import { Card } from "@/components/common/Card";
+import type { User } from "@/types";
 
 export function UserCard({ user }: { user: User }) {
   return (
