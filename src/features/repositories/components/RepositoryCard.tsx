@@ -4,7 +4,7 @@ import { Badge } from "@/components/common/Badge";
 import { formatRelativeTime } from "@/utils/time";
 import type { Repo } from "@/types";
 
-export function RepoCard({ repo }: { repo: Repo }) {
+export function RepositoryCard({ repo }: { repo: Repo }) {
   return (
     <Link to={`/repos/${repo.owner}/${repo.name}`} className="card block p-4 sm:p-5 hover:underline">
       <div className="flex items-start justify-between gap-3">

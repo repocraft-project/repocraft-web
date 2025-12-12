@@ -3,7 +3,7 @@ import { Users } from "lucide-react";
 import { Card } from "@/components/common/Card";
 import type { Organization } from "@/types";
 
-export function OrgCard({ org }: { org: Organization }) {
+export function OrganizationCard({ org }: { org: Organization }) {
   return (
     <Link to={`/orgs/${org.handle}`} className="hover:underline">
       <Card className="h-full">

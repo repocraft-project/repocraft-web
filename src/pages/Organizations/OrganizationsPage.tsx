@@ -1,4 +1,4 @@
-import { OrgCard } from "@/features/organizations/components/OrgCard";
+import { OrganizationCard } from "@/features/organizations/components/OrganizationCard";
 import { Card } from "@/components/common/Card";
 import { orgs } from "@/data/mock";
 
@@ -12,7 +12,7 @@ export default function OrganizationsPage() {
       <Card>
         <div className="grid-gap md:grid-cols-2">
           {orgs.map((org) => (
-            <OrgCard key={org.handle} org={org} />
+            <OrganizationCard key={org.handle} org={org} />
           ))}
         </div>
       </Card>

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Plus, GitBranch, GitPullRequest, MessageCircle, Rocket } from "lucide-react";
-import { OrgCard } from "@/features/organizations/components/OrgCard";
+import { OrganizationCard } from "@/features/organizations/components/OrganizationCard";
 import { Button } from "@/components/common/Button";
 import { Card } from "@/components/common/Card";
 import { activities, orgs, repos, users } from "@/data/mock";
@@ -73,7 +73,7 @@ export default function HomePage() {
               </Link>
             </div>
             <div className="mt-1 grid-gap">
-              <OrgCard org={featuredOrg} />
+              <OrganizationCard org={featuredOrg} />
             </div>
           </div>
         ) : null}

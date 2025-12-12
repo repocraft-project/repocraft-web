@@ -2,7 +2,7 @@ import { Link, useParams } from "react-router-dom";
 import { Users } from "lucide-react";
 import { Card, CardHeader } from "@/components/common/Card";
 import { orgs, repos, users } from "@/data/mock";
-import { RepoCard } from "@/features/repositories/components/RepoCard";
+import { RepositoryCard } from "@/features/repositories/components/RepositoryCard";
 
 export default function UserProfilePage() {
   const { username } = useParams();
@@ -47,7 +47,7 @@ export default function UserProfilePage() {
         <CardHeader title="Repositories" subtitle={`${userRepos.length} projects`} />
         <div className="grid-gap md:grid-cols-2">
           {userRepos.map((repo) => (
-            <RepoCard key={repo.id} repo={repo} />
+            <RepositoryCard key={repo.id} repo={repo} />
           ))}
         </div>
       </Card>

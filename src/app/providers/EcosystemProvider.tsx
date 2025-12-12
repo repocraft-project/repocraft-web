@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
-import { QueryProvider } from "./query-client";
-import { ThemeProvider } from "./theme";
+import { QueryProvider } from "./QueryClient";
+import { ThemeProvider } from "./Theme";
 
 export function EcosystemProvider({ children }: { children: ReactNode }) {
   return (

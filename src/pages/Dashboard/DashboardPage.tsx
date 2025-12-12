@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Plus, Settings } from "lucide-react";
-import { RepoCard } from "@/features/repositories/components/RepoCard";
+import { RepositoryCard } from "@/features/repositories/components/RepositoryCard";
 import { ActivityList } from "@/features/activities/components/ActivityList";
 import { Card, CardGrid, CardHeader } from "@/components/common/Card";
 import { Button } from "@/components/common/Button";
@@ -34,7 +34,7 @@ export default function DashboardPage() {
           <CardHeader title="Your repositories" subtitle="Quick access to projects" />
           <div className="grid-gap">
             {myRepos.map((repo) => (
-              <RepoCard key={repo.id} repo={repo} />
+              <RepositoryCard key={repo.id} repo={repo} />
             ))}
           </div>
           <div className="mt-4 text-right text-sm">

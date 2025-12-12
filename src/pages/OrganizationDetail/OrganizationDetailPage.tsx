@@ -2,7 +2,7 @@ import { Link, useParams } from "react-router-dom";
 import { Users } from "lucide-react";
 import { Card, CardHeader } from "@/components/common/Card";
 import { orgs, repos, users } from "@/data/mock";
-import { RepoCard } from "@/features/repositories/components/RepoCard";
+import { RepositoryCard } from "@/features/repositories/components/RepositoryCard";
 import { UserCard } from "@/features/users/components/UserCard";
 
 export default function OrganizationDetailPage() {
@@ -41,7 +41,7 @@ export default function OrganizationDetailPage() {
         />
         <div className="grid-gap md:grid-cols-2">
           {orgRepos.map((repo) => (
-            <RepoCard key={repo.id} repo={repo} />
+            <RepositoryCard key={repo.id} repo={repo} />
           ))}
         </div>
       </Card>
