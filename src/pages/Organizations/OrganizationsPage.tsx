@@ -1,21 +1,24 @@
 import { OrganizationCard } from "@/features/organizations/components/OrganizationCard";
 import { Card } from "@/components/common/Card";
+import { Grid } from "@/components/common/Grid";
+import { PageHeader } from "@/components/layout/PageHeader";
+import { PageLayout } from "@/components/layout/PageLayout";
 import { orgs } from "@/data/mock";
 
 export default function OrganizationsPage() {
   return (
-    <div className="grid-gap">
-      <div>
-        <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-50">Organizations</h1>
-        <p className="muted">Teams that manage repositories on Repocraft.</p>
-      </div>
+    <PageLayout>
+      <PageHeader 
+        title="Organizations" 
+        subtitle="Teams that manage repositories on Repocraft."
+      />
       <Card>
-        <div className="grid-gap md:grid-cols-2">
+        <Grid mdCols={2}>
           {orgs.map((org) => (
             <OrganizationCard key={org.handle} org={org} />
           ))}
-        </div>
+        </Grid>
       </Card>
-    </div>
+    </PageLayout>
   );
 }

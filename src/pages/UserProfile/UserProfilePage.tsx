@@ -1,6 +1,8 @@
-import { Link, useParams } from "react-router-dom";
-import { Users } from "lucide-react";
+import { useParams } from "react-router-dom";
 import { Card, CardHeader } from "@/components/common/Card";
+import { UserInfo } from "@/components/common/UserInfo";
+import { Text } from "@/components/common/Text";
+import { PageLayout } from "@/components/layout/PageLayout";
 import { orgs, repos, users } from "@/data/mock";
 import { RepositoryCard } from "@/features/repositories/components/RepositoryCard";
 
@@ -9,39 +11,22 @@ export default function UserProfilePage() {
   const user = users.find((u) => u.username === username);
 
   if (!user) {
-    return <p>User not found.</p>;
+    return <Text>User not found.</Text>;
   }
 
   const userRepos = repos.filter((r) => user.repos.includes(r.id));
   const userOrgs = orgs.filter((o) => user.orgs.includes(o.handle));
 
   return (
-    <div className="grid-gap">
-      <div className="card p-5">
-        <div className="flex items-start justify-between gap-3">
-          <div>
-            <p className="text-sm text-slate-500 dark:text-slate-400">User</p>
-            <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-50">{user.name}</h1>
-            <p className="text-sky-600">@{user.username}</p>
-            <p className="mt-1 text-sm text-slate-600 dark:text-slate-300">{user.title}</p>
-            {user.bio ? <p className="muted mt-1 text-sm">{user.bio}</p> : null}
-          </div>
-          <div className="text-right text-sm text-slate-500 dark:text-slate-400">
-            {user.repos.length} repos
-          </div>
-        </div>
-        {userOrgs.length ? (
-          <div className="mt-3 flex flex-wrap items-center gap-2 text-xs text-slate-500 dark:text-slate-400">
-            <Users size={12} />
-            Member of
-            {userOrgs.map((org) => (
-              <Link key={org.handle} to={`/orgs/${org.handle}`} className="text-sky-600 dark:text-sky-400">
-                {org.name}
-              </Link>
-            ))}
-          </div>
-        ) : null}
-      </div>
+    <PageLayout>
+      <UserInfo
+        name={user.name}
+        username={user.username}
+        title={user.title}
+        bio={user.bio}
+        stats={[{ label: "repos", value: user.repos.length }]}
+        organizations={userOrgs.map(org => ({ name: org.name, handle: org.handle }))}
+      />
 
       <Card>
         <CardHeader title="Repositories" subtitle={`${userRepos.length} projects`} />
@@ -51,6 +36,6 @@ export default function UserProfilePage() {
           ))}
         </div>
       </Card>
-    </div>
+    </PageLayout>
   );
 }

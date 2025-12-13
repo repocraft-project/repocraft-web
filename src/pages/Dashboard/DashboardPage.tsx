@@ -1,9 +1,13 @@
-import { Link } from "react-router-dom";
 import { Plus, Settings } from "lucide-react";
 import { RepositoryCard } from "@/features/repositories/components/RepositoryCard";
 import { ActivityList } from "@/features/activities/components/ActivityList";
 import { Card, CardGrid, CardHeader } from "@/components/common/Card";
 import { Button } from "@/components/common/Button";
+import { NavLink } from "@/components/common/NavLink";
+import { Grid } from "@/components/common/Grid";
+import { Flex } from "@/components/common/Flex";
+import { PageHeader } from "@/components/layout/PageHeader";
+import { PageLayout } from "@/components/layout/PageLayout";
 import { activities, repos, users } from "@/data/mock";
 
 export default function DashboardPage() {
@@ -11,40 +15,40 @@ export default function DashboardPage() {
   const myRepos = repos.filter((r) => currentUser?.repos.includes(r.id));
 
   return (
-    <div className="grid-gap">
-      <div className="flex flex-wrap items-center justify-between gap-3">
-        <div>
-          <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-50">Dashboard</h1>
-          <p className="muted">Overview of your repositories and activity.</p>
-        </div>
-        <div className="flex gap-2">
-          <Button variant="secondary" size="sm">
-            <Settings size={16} />
-            Settings
-          </Button>
-          <Button size="sm">
-            <Plus size={16} />
-            New repository
-          </Button>
-        </div>
-      </div>
+    <PageLayout>
+      <PageHeader 
+        title="Dashboard" 
+        subtitle="Overview of your repositories and activity."
+        actions={
+          <>
+            <Button variant="secondary" size="sm">
+              <Settings size={16} />
+              Settings
+            </Button>
+            <Button size="sm">
+              <Plus size={16} />
+              New repository
+            </Button>
+          </>
+        }
+      />
 
       <CardGrid>
         <Card>
           <CardHeader title="Your repositories" subtitle="Quick access to projects" />
-          <div className="grid-gap">
+          <Grid>
             {myRepos.map((repo) => (
               <RepositoryCard key={repo.id} repo={repo} />
             ))}
-          </div>
-          <div className="mt-4 text-right text-sm">
-            <Link to="/repos" className="text-sky-600 dark:text-sky-400">
+          </Grid>
+          <Flex className="mt-4 text-right text-sm" justify="end">
+            <NavLink to="/repos" variant="primary">
               View all repositories
-            </Link>
-          </div>
+            </NavLink>
+          </Flex>
         </Card>
         <ActivityList title="Recent activity" activities={activities.slice(0, 4)} />
       </CardGrid>
-    </div>
+    </PageLayout>
   );
 }
