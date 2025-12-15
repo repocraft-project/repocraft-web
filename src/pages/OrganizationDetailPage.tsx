@@ -4,9 +4,9 @@ import { NavLink } from "@/components/common/NavLink";
 import { Grid } from "@/components/common/Grid";
 import { Text } from "@/components/common/Text";
 import { PageLayout } from "@/components/layout/PageLayout";
-import { OrganizationHeader } from "@/features/organizations/components/OrganizationHeader";
-import { RepositoryCard } from "@/features/repositories/components/RepositoryCard";
-import { UserCard } from "@/features/users/components/UserCard";
+import { OrganizationHeader } from "@/features/organizations";
+import { RepositoryCard } from "@/features/repositories";
+import { UserCard } from "@/features/users";
 import { orgs, repos, users } from "@/data/mock";
 
 export default function OrganizationDetailPage() {

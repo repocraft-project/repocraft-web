@@ -1,4 +1,4 @@
-import { OrganizationCard } from "@/features/organizations/components/OrganizationCard";
+import { OrganizationCard } from "@/features/organizations";
 import { Card } from "@/components/common/Card";
 import { Grid } from "@/components/common/Grid";
 import { PageHeader } from "@/components/layout/PageHeader";

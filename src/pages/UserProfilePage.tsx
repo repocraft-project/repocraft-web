@@ -2,8 +2,8 @@ import { useParams } from "react-router-dom";
 import { Card, CardHeader } from "@/components/common/Card";
 import { Text } from "@/components/common/Text";
 import { PageLayout } from "@/components/layout/PageLayout";
-import { RepositoryCard } from "@/features/repositories/components/RepositoryCard";
-import { UserInfo } from "@/features/users/components/UserInfo";
+import { RepositoryCard } from "@/features/repositories";
+import { UserInfo } from "@/features/users";
 import { orgs, repos, users } from "@/data/mock";
 
 export default function UserProfilePage() {

@@ -1,6 +1,6 @@
 import { Plus, Settings } from "lucide-react";
-import { RepositoryCard } from "@/features/repositories/components/RepositoryCard";
-import { ActivityList } from "@/features/activities/components/ActivityList";
+import { ActivityList } from "@/features/activities";
+import { RepositoryCard } from "@/features/repositories";
 import { Card, CardGrid, CardHeader } from "@/components/common/Card";
 import { Button } from "@/components/common/Button";
 import { NavLink } from "@/components/common/NavLink";

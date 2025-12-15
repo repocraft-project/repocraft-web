@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { RepositoryCard } from "@/features/repositories/components/RepositoryCard";
+import { RepositoryCard } from "@/features/repositories";
 import { Card } from "@/components/common/Card";
 import { SearchBox } from "@/components/common/SearchBox";
 import { Grid } from "@/components/common/Grid";

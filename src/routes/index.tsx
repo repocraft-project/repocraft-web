@@ -1,11 +1,11 @@
 import { Route, Routes } from "react-router-dom";
-import DashboardPage from "@/pages/Dashboard/DashboardPage";
-import HomePage from "@/pages/Home/HomePage";
-import OrganizationDetailPage from "@/pages/OrganizationDetail/OrganizationDetailPage";
-import OrganizationsPage from "@/pages/Organizations/OrganizationsPage";
-import RepoDetailPage from "@/pages/RepositoryDetail/RepositoryDetailPage";
-import RepositoriesPage from "@/pages/Repositories/RepositoriesPage";
-import UserProfilePage from "@/pages/UserProfile/UserProfilePage";
+import DashboardPage from "@/pages/DashboardPage";
+import HomePage from "@/pages/HomePage";
+import OrganizationDetailPage from "@/pages/OrganizationDetailPage";
+import OrganizationsPage from "@/pages/OrganizationsPage";
+import RepoDetailPage from "@/pages/RepositoryDetailPage";
+import RepositoriesPage from "@/pages/RepositoriesPage";
+import UserProfilePage from "@/pages/UserProfilePage";
 
 export function AppRoutes() {
   return (
