@@ -13,14 +13,14 @@ export function RepositoryActions({ repo, className }: RepositoryActionsProps) {
       <Button size="sm" variant="secondary">
         <Star size={14} />
         Star
-        <span className="rounded-md bg-slate-200 px-2 py-0.5 text-xs font-semibold text-slate-700 dark:bg-slate-800 dark:text-slate-200">
+        <span className="rounded-lg bg-slate-200 px-2 py-0.5 text-xs font-semibold text-slate-700 dark:bg-slate-800 dark:text-slate-200">
           {repo.stars}
         </span>
       </Button>
       <Button size="sm" variant="secondary">
         <GitFork size={14} />
         Fork
-        <span className="rounded-md bg-slate-200 px-2 py-0.5 text-xs font-semibold text-slate-700 dark:bg-slate-800 dark:text-slate-200">
+        <span className="rounded-lg bg-slate-200 px-2 py-0.5 text-xs font-semibold text-slate-700 dark:bg-slate-800 dark:text-slate-200">
           {repo.forks}
         </span>
       </Button>

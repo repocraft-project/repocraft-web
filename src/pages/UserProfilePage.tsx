@@ -1,5 +1,4 @@
 import { useParams } from "react-router-dom";
-import { Card, CardHeader } from "@/components/common/Card";
 import { Text } from "@/components/common/Text";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { RepositoryCard } from "@/features/repositories";
@@ -28,14 +27,17 @@ export default function UserProfilePage() {
         organizations={userOrgs.map(org => ({ name: org.name, handle: org.handle }))}
       />
 
-      <Card>
-        <CardHeader title="Repositories" subtitle={`${userRepos.length} projects`} />
+      <section className="space-y-2">
+        <div>
+          <h2 className="text-lg font-semibold text-slate-900 dark:text-slate-50">Repositories</h2>
+          <p className="muted text-sm">{userRepos.length} projects</p>
+        </div>
         <div className="grid-gap md:grid-cols-2">
           {userRepos.map((repo) => (
             <RepositoryCard key={repo.id} repo={repo} />
           ))}
         </div>
-      </Card>
+      </section>
     </PageLayout>
   );
 }

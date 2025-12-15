@@ -1,5 +1,4 @@
 import { useParams } from "react-router-dom";
-import { Card, CardHeader } from "@/components/common/Card";
 import { NavLink } from "@/components/common/NavLink";
 import { Grid } from "@/components/common/Grid";
 import { Text } from "@/components/common/Text";
@@ -27,31 +26,34 @@ export default function OrganizationDetailPage() {
         description={org.description}
       />
 
-      <Card>
-        <CardHeader
-          title="Repositories"
-          subtitle={`${orgRepos.length} repos`}
-          action={
-            <NavLink to="/repos" variant="primary">
-              View all
-            </NavLink>
-          }
-        />
+      <section className="space-y-2">
+        <div className="flex items-start justify-between gap-3">
+          <div>
+            <h2 className="text-lg font-semibold text-slate-900 dark:text-slate-50">Repositories</h2>
+            <p className="muted text-sm">{orgRepos.length} repos</p>
+          </div>
+          <NavLink to="/repos" variant="primary">
+            View all
+          </NavLink>
+        </div>
         <Grid mdCols={2}>
           {orgRepos.map((repo) => (
             <RepositoryCard key={repo.id} repo={repo} />
           ))}
         </Grid>
-      </Card>
+      </section>
 
-      <Card>
-        <CardHeader title="Members" subtitle={`${orgMembers.length} people`} />
+      <section className="space-y-2">
+        <div>
+          <h2 className="text-lg font-semibold text-slate-900 dark:text-slate-50">Members</h2>
+          <p className="muted text-sm">{orgMembers.length} people</p>
+        </div>
         <Grid mdCols={2}>
           {orgMembers.map((member) => (
             <UserCard key={member.username} user={member} />
           ))}
         </Grid>
-      </Card>
+      </section>
     </PageLayout>
   );
 }
