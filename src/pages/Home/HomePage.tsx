@@ -1,11 +1,11 @@
 import { Plus } from "lucide-react";
 import { OrganizationCard } from "@/features/organizations/components/OrganizationCard";
+import { RepositoryList } from "@/features/repositories/components/RepositoryList";
+import { RepositoryCardCompact } from "@/features/repositories/components/RepositoryCardCompact";
+import { ActivityItem } from "@/features/activities/components/ActivityItem";
 import { Button } from "@/components/common/Button";
 import { Card } from "@/components/common/Card";
 import { NavLink } from "@/components/common/NavLink";
-import { RepositoryList } from "@/components/common/RepositoryList";
-import { ActivityItem } from "@/components/common/ActivityItem";
-import { RepositoryCardCompact } from "@/components/common/RepositoryCardCompact";
 import { Grid } from "@/components/common/Grid";
 import { Section } from "@/components/layout/Section";
 import { Sidebar } from "@/components/layout/Sidebar";

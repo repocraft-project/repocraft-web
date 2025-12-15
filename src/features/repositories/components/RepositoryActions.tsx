@@ -1,6 +1,6 @@
 import { GitFork, Star } from "lucide-react";
-import { Button } from "./Button";
-import { Badge } from "./Badge";
+import { Button } from "@/components/common/Button";
+import { Badge } from "@/components/common/Badge";
 import type { Repo } from "@/types";
 
 interface RepositoryActionsProps {

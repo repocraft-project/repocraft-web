@@ -1,8 +1,8 @@
 import { BookOpen, GitFork, GitPullRequest, Shield, Star } from "lucide-react";
-import { Card, CardHeader } from "./Card";
-import { TagList } from "./TagList";
-import { StatsGrid } from "./StatsGrid";
-import { MetaInfo } from "./MetaInfo";
+import { Card, CardHeader } from "@/components/common/Card";
+import { TagList } from "@/components/common/TagList";
+import { StatsGrid } from "@/components/common/StatsGrid";
+import { MetaInfo } from "@/components/common/MetaInfo";
 import { formatRelativeTime } from "@/utils/time";
 import type { Repo } from "@/types";
 

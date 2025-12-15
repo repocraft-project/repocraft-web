@@ -1,13 +1,13 @@
 import { useParams } from "react-router-dom";
 import { Card, CardHeader } from "@/components/common/Card";
 import { NavLink } from "@/components/common/NavLink";
-import { OrganizationHeader } from "@/components/common/OrganizationHeader";
 import { Grid } from "@/components/common/Grid";
 import { Text } from "@/components/common/Text";
 import { PageLayout } from "@/components/layout/PageLayout";
-import { orgs, repos, users } from "@/data/mock";
+import { OrganizationHeader } from "@/features/organizations/components/OrganizationHeader";
 import { RepositoryCard } from "@/features/repositories/components/RepositoryCard";
 import { UserCard } from "@/features/users/components/UserCard";
+import { orgs, repos, users } from "@/data/mock";
 
 export default function OrganizationDetailPage() {
   const { handle } = useParams();

@@ -1,5 +1,5 @@
 import { BookOpen, FileText, GitPullRequest } from "lucide-react";
-import { TabNavigation, TabItem } from "./TabNavigation";
+import { TabNavigation, TabItem } from "@/components/common/TabNavigation";
 import type { Repo } from "@/types";
 
 interface RepositoryTabsProps {

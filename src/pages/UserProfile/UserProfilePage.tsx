@@ -1,10 +1,10 @@
 import { useParams } from "react-router-dom";
 import { Card, CardHeader } from "@/components/common/Card";
-import { UserInfo } from "@/components/common/UserInfo";
 import { Text } from "@/components/common/Text";
 import { PageLayout } from "@/components/layout/PageLayout";
-import { orgs, repos, users } from "@/data/mock";
 import { RepositoryCard } from "@/features/repositories/components/RepositoryCard";
+import { UserInfo } from "@/features/users/components/UserInfo";
+import { orgs, repos, users } from "@/data/mock";
 
 export default function UserProfilePage() {
   const { username } = useParams();

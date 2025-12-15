@@ -5,14 +5,14 @@ import { useParams } from "react-router-dom";
 import { ChevronDown } from "lucide-react";
 import remarkGfm from "remark-gfm";
 import { Button } from "@/components/common/Button";
-import { RepositoryHeader } from "@/components/common/RepositoryHeader";
-import { RepositoryTabs } from "@/components/common/RepositoryTabs";
-import { RepositoryActions } from "@/components/common/RepositoryActions";
-import { RepositoryFileList } from "@/components/common/RepositoryFileList";
-import { RepositoryAbout } from "@/components/common/RepositoryAbout";
 import { Text } from "@/components/common/Text";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { TwoColumnLayout } from "@/components/layout/TwoColumnLayout";
+import { RepositoryAbout } from "@/features/repositories/components/RepositoryAbout";
+import { RepositoryActions } from "@/features/repositories/components/RepositoryActions";
+import { RepositoryFileList } from "@/features/repositories/components/RepositoryFileList";
+import { RepositoryHeader } from "@/features/repositories/components/RepositoryHeader";
+import { RepositoryTabs } from "@/features/repositories/components/RepositoryTabs";
 import { repos } from "@/data/mock";
 
 function CodeBlock({
