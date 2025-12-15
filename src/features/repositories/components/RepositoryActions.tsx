@@ -1,6 +1,5 @@
 import { GitFork, Star } from "lucide-react";
 import { Button } from "@/components/common/Button";
-import { Badge } from "@/components/common/Badge";
 import type { Repo } from "@/types";
 
 interface RepositoryActionsProps {
@@ -25,9 +24,6 @@ export function RepositoryActions({ repo, className }: RepositoryActionsProps) {
           {repo.forks}
         </span>
       </Button>
-      <Badge color={repo.visibility === "public" ? "green" : "orange"}>
-        {repo.visibility}
-      </Badge>
     </div>
   );
 }

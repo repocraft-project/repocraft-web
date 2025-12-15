@@ -85,6 +85,7 @@ export default function RepoDetailPage() {
       <RepositoryHeader 
         owner={repo.owner}
         name={repo.name}
+        visibility={repo.visibility}
         actions={<RepositoryActions repo={repo} />}
       />
 

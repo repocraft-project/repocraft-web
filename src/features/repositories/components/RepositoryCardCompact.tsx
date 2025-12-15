@@ -11,7 +11,10 @@ export function RepositoryCardCompact({ repo, className }: RepositoryCardCompact
   return (
     <div className={cn("space-y-4", className)}>
       <div className="flex items-center justify-between text-sm">
-        <Link to={`/repos/${repo.owner}/${repo.name}`} className="font-semibold text-slate-900 no-underline hover:no-underline">
+        <Link
+          to={`/repos/${repo.owner}/${repo.name}`}
+          className="font-semibold text-slate-900 no-underline hover:underline"
+        >
           {repo.owner}/{repo.name}
         </Link>
         <span className="text-xs text-slate-500">{repo.stars} ★</span>

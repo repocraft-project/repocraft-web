@@ -1,4 +1,4 @@
-import { Folder, FileText } from "lucide-react";
+import { Folder, FileText, GitCommit } from "lucide-react";
 import { formatRelativeTime } from "@/utils/time";
 import type { Repo } from "@/types";
 
@@ -8,8 +8,24 @@ interface RepositoryFileListProps {
 }
 
 export function RepositoryFileList({ files, className }: RepositoryFileListProps) {
+  const header = files[0];
+
   return (
     <div className={`overflow-hidden rounded-md border border-slate-200 bg-white shadow-sm dark:border-slate-800 dark:bg-slate-900 ${className || ""}`}>
+      {header ? (
+        <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 bg-slate-50 px-4 py-3 text-xs text-slate-600 dark:border-slate-800 dark:bg-slate-900/60 dark:text-slate-300">
+          <div className="flex items-center gap-2">
+            <GitCommit size={14} className="text-slate-500" />
+            <span className="font-semibold text-slate-800 dark:text-slate-100">{header.author}</span>
+            <span className="text-slate-500 dark:text-slate-400">{header.message}</span>
+          </div>
+          <div className="flex flex-wrap items-center gap-3">
+            <span className="text-slate-500 dark:text-slate-400">{header.hash ?? "latest"}</span>
+            <span className="text-slate-500 dark:text-slate-400">{formatRelativeTime(header.updatedAt)}</span>
+            <span className="text-slate-700 dark:text-slate-200 font-semibold">{header.commits} commits</span>
+          </div>
+        </div>
+      ) : null}
       <div className="divide-y divide-slate-200 dark:divide-slate-800">
         {files.map((file) => (
           <div key={file.path} className="grid grid-cols-[2fr,2fr,1fr,1fr] items-center gap-3 px-4 py-3 text-sm">

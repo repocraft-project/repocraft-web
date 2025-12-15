@@ -24,6 +24,7 @@ export type RepoFile = {
   type: "file" | "dir";
   message: string;
   author: string;
+  hash?: string;
   commits: number;
   updatedAt: string;
 };

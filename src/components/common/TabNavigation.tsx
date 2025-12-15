@@ -36,9 +36,9 @@ export function TabItem({ children, isActive = false, isDisabled = false, badge,
       )}
     >
       {icon}
-      {children}
+      <span>{children}</span>
       {badge && (
-        <span className="rounded-full bg-slate-200 px-2 text-xs text-slate-700 dark:bg-slate-800 dark:text-slate-200">
+        <span className="rounded-full bg-slate-200 px-2 py-0.5 text-xs font-semibold text-slate-700 dark:bg-slate-800 dark:text-slate-200">
           {badge}
         </span>
       )}

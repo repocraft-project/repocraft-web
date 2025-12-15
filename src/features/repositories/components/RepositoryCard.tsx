@@ -6,10 +6,13 @@ import type { Repo } from "@/types";
 
 export function RepositoryCard({ repo }: { repo: Repo }) {
   return (
-    <Link to={`/repos/${repo.owner}/${repo.name}`} className="card block p-4 sm:p-5 hover:underline">
+    <Link
+      to={`/repos/${repo.owner}/${repo.name}`}
+      className="group card block p-4 transition-colors sm:p-5 no-underline hover:no-underline hover:bg-slate-50 dark:hover:bg-slate-800/60"
+    >
       <div className="flex items-start justify-between gap-3">
         <div>
-          <h3 className="text-lg font-semibold text-slate-900 dark:text-slate-50">
+          <h3 className="text-lg font-semibold text-slate-900 dark:text-slate-50 group-hover:underline">
             {repo.owner}/<span className="text-sky-600">{repo.name}</span>
           </h3>
           <p className="mt-1 text-sm text-slate-600 dark:text-slate-300">{repo.description}</p>
